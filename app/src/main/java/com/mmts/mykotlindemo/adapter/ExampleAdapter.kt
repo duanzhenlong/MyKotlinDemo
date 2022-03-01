@@ -28,7 +28,7 @@ class ExampleAdapter (private val exampleList: List<ExampleItem>, private var co
     val BASE_URL = "https://arcblockio.cn"
     class ExampleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val imageView: ImageView = itemView.image_view
-        val textView1: TextView = itemView.name_text
+        val titleText: TextView = itemView.name_text
         val content: ConstraintLayout = itemView.content
     }
 
@@ -53,7 +53,7 @@ class ExampleAdapter (private val exampleList: List<ExampleItem>, private var co
             .placeholder(R.drawable.ic_place)
             .error(R.drawable.ic_place)
             .into(holder.imageView);
-        holder.textView1.text = currentItem.frontmatter?.title ?: "input Title"
+        holder.titleText.text = currentItem.frontmatter?.title ?: "input Title"
         holder.content.setOnClickListener{
             context.toast("click")
             //常规含参跳转界面
